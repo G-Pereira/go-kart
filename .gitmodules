@@ -1,0 +1,6 @@
+[submodule "greenmobi-bms"]
+	path = greenmobi-bms
+	url = https://github.com/G-Pereira/greenmobi-bms
+[submodule "greenmobi-drive"]
+	path = greenmobi-drive
+	url = https://github.com/G-Pereira/greenmobi-drive
