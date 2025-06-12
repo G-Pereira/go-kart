@@ -12,6 +12,7 @@ typedef struct _objects_t {
     lv_obj_t *bat_lvl_bar;
     lv_obj_t *bat_lvl_lbl;
     lv_obj_t *obj0;
+    lv_obj_t *title;
     lv_obj_t *obj1;
 } objects_t;
 
@@ -24,8 +25,10 @@ enum ScreensEnum {
 void create_screen_main();
 void tick_screen_main();
 
-void create_screens();
+void tick_screen_by_id(enum ScreensEnum screenId);
 void tick_screen(int screen_index);
+
+void create_screens();
 
 
 #ifdef __cplusplus

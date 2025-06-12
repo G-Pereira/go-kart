@@ -3,6 +3,10 @@
 #include <TFT_eSPI.h>
 #include <FT62XXTouchScreen.h>
 #include "ui/ui.h"
+#include "ui/vars.h"
+#include "ui/actions.h"
+
+#define TEST_MODE
 
 FT62XXTouchScreen ts = FT62XXTouchScreen(TFT_WIDTH, PIN_SDA, PIN_SCL);
 
@@ -18,10 +22,8 @@ lv_obj_t *screen;
 void my_touchpad_read(lv_indev_t *indev, lv_indev_data_t *data) {
     TouchPoint p = ts.read();
   if (p.touched) {
-
     data->point.x = p.yPos;
     data->point.y = TFT_HEIGHT - p.xPos;
-    Serial.printf("x:%d, y:%d\n", data->point.x, data->point.y);
     data->state = LV_INDEV_STATE_PRESSED;
   } else {
     data->state = LV_INDEV_STATE_RELEASED;
@@ -29,8 +31,6 @@ void my_touchpad_read(lv_indev_t *indev, lv_indev_data_t *data) {
 }
 
 void setup() {
-  Serial.begin(115200);
-
   lv_init();
 
   // Start TouchScreen
@@ -62,4 +62,22 @@ void loop() {
 
   // LVGL Task Handler
   lv_task_handler();
+
+  #ifdef TEST_MODE
+    if (millis() % 100 == 0) {
+      if (get_var_speed() < 40) {
+        set_var_speed(get_var_speed() + 1);
+      }
+      else {
+        set_var_speed(0);
+      }
+
+      if (get_var_bat_lvl() < 100){
+        set_var_bat_lvl(get_var_bat_lvl() + 1);
+      }
+      else {
+        set_var_bat_lvl(0);
+      }
+    }
+#endif
 }

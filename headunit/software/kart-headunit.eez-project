@@ -1,4 +1,5 @@
 {
+  "themesVersion": 1,
   "objID": "6666cd76-f969-5646-9e7b-e39d750cc7d9",
   "settings": {
     "objID": "e007d988-9fba-797d-72e9-efc33ca6d05c",
@@ -90,7 +91,12 @@
         }
       ],
       "destinationFolder": "src\\ui",
+      "separateFolderForImagesAndFonts": false,
+      "imageExportMode": "source",
+      "fontExportMode": "source",
+      "fileSystemPath": "",
       "lvglInclude": "lvgl.h",
+      "screensLifetimeSupport": false,
       "generateSourceCodeForEezFramework": false,
       "compressFlowDefinition": false,
       "executionQueueSize": 1000,
@@ -192,7 +198,9 @@
                   },
                   "INDICATOR": {
                     "DEFAULT": {
-                      "bg_grad_opa": 100
+                      "bg_color": "#58ff00",
+                      "bg_grad_color": "#ff0000",
+                      "bg_grad_dir": "VER"
                     }
                   }
                 }
@@ -385,6 +393,7 @@
               },
               "timeline": [],
               "eventHandlers": [],
+              "identifier": "title",
               "leftUnit": "px",
               "topUnit": "px",
               "widthUnit": "content",
@@ -416,7 +425,8 @@
               "text": "LCD Kart",
               "textType": "literal",
               "longMode": "CLIP",
-              "recolor": false
+              "recolor": false,
+              "previewValue": "LCD Kart"
             },
             {
               "objID": "2e8a2b17-af11-4be4-ef76-5c55244e3ed8",
@@ -477,7 +487,17 @@
           "disabledStateType": "literal",
           "states": "",
           "localStyles": {
-            "objID": "8eb86917-c831-b762-5685-8d01972e8a22"
+            "objID": "8eb86917-c831-b762-5685-8d01972e8a22",
+            "definition": {
+              "MAIN": {
+                "DEFAULT": {
+                  "bg_grad_dir": "VER",
+                  "bg_grad_color": "#008fd1",
+                  "bg_color": "#000000",
+                  "bg_grad_stop": 190
+                }
+              }
+            }
           },
           "groupIndex": 0
         }
@@ -489,7 +509,9 @@
       "left": 0,
       "top": 0,
       "width": 480,
-      "height": 320
+      "height": 320,
+      "createAtStart": true,
+      "deleteOnScreenUnload": false
     }
   ],
   "userWidgets": [],
@@ -504,24 +526,12 @@
   },
   "fonts": [],
   "bitmaps": [],
-  "colors": [
-    {
-      "objID": "a3333659-ca35-4e6c-e434-d9dd1aa3b7d8",
-      "name": "color"
-    },
-    {
-      "objID": "f111d279-a86c-40ff-8739-063e95629d7f",
-      "name": "background_color"
-    }
-  ],
+  "colors": [],
   "themes": [
     {
-      "objID": "728af2e4-0a31-4f5c-b5cf-8fbdc345e872",
-      "name": "default",
-      "colors": [
-        "#ffffff",
-        "#404040"
-      ]
+      "objID": "ed882da1-8496-e314-059f-7473f6a898ba",
+      "name": "Default",
+      "colors": []
     }
   ]
 }
