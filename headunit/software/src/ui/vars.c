@@ -1,7 +1,7 @@
 #include "vars.h"
 
-int32_t bat_lvl = 0;
-int32_t speed = 0;
+uint8_t bat_lvl = 0;
+uint8_t speed = 0;
 
 int32_t get_var_bat_lvl(){
     return bat_lvl;
